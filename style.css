@@ -1,8 +1,21 @@
+
+
+
+
+@font-face {
+    font-family: 'komorebiregular';
+    src: url('font/komorebi-webfont.woff2') format('woff2'),
+         url('font/komorebi-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 body{
-  background-color: black;
   color: white;
   text-align: center;
+  font-family: 'Quicksand', sans-serif
+  
 }
+ 
 .yo{
   border-style: solid;
   border-width: 5px;
@@ -10,4 +23,88 @@ body{
 }
 .text{
   margin: 10px;
+}
+.cracking{
+  font-size: 80px;
+  text-align: center;
+  font-family: 'komorebiregular';
+}
+
+
+
+
+
+
+/*animated background*/
+.css-selector {
+    background: linear-gradient(270deg, #000000, #656565);
+    background-size: 400% 400%;
+
+    -webkit-animation: backgroundani 30s ease infinite;
+    -moz-animation: backgroundani 30s ease infinite;
+    animation: backgroundani 30s ease infinite;
+}
+
+@-webkit-keyframes backgroundani {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes backgroundani {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes backgroundani {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+/*sidebar*/
+#toggle {
+  display: none;
+}
+
+.leftbar {
+  position: absolute;
+  width: 30%;
+  height: 100%;
+  background-color: #2c3e50;
+  box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.5);
+  left: -32%;
+  /* for sidebar to stay on top */
+  z-index: 1;
+  transition: left 0.5s ease-in-out;
+}
+
+.exit {
+  cursor: pointer;
+  font-weight: 800;
+  color: white;
+  float: right;
+  padding: 1.1rem;
+}
+
+.content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: background-color 0.5s ease-in-out;
+}
+
+.button {
+  position: absolute;
+  cursor: pointer;
+  font-weight: 800;
+  color: black;
+  font-size: 40px;
+  padding: 20px 50px;
+}
+
+#toggle:checked ~ .leftbar {
+  left: 0;
+}
+
+#toggle:checked ~ .content {
+  background-color: rgba(0, 0, 0, 0.5);
 }
